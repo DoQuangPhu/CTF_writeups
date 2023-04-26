@@ -9,8 +9,11 @@ cùng mở IDA để xem luồng thực thi của chương trình :
 ![image](https://user-images.githubusercontent.com/93699926/234210146-491ca0be-f894-49d5-baa9-02d660fd41b5.png)
  
  Luồng thực thi của chương trình đơn giản như sau 
+ 
  +) đầu tiên nó gọi hàm Localtime và gieo seed trùng với thời gian chương trình chạy để lấy giờ và in ra những message . đoạn này không đáng quan tâm tại nó chỉ là tính năng của chương trình và không có lỗi 
+ 
  +) tiếp dó nó cho ta nhập 14 ksy tự vô format được khai báo tới tận 40bytes trước đó =>> no BOF
+ 
  +) và sau đó nó lại in biến format ra cho ta mà không có bất kỳ format specifier nào =>> fmt vuln
  
  
