@@ -28,8 +28,8 @@ cùng mở IDA để xem luồng thực thi của chương trình :
  VD: i = 0x00000001 =>> 0xff000001= -16777215
  
  vậy làm vậy bằng cách nào : để ý tại địa chỉ 0x007ffc5902ab08 và 0x007ffc5902ab20 ta có một giá trị stack đang trỏ tơi một giá trị stack khác
- Vậy ta sẽ sử dụng địa chỉ 0x007ffc5902ab20 với %28 để có thể ghi đè giá trị mà nó tỏ tới thành giá trị của rsp+8 và ta sẽ sử dụng chính địa chỉ 0x007ffc5902ab20 với %55 lúc đó dang chứa địa chỉ rsp+8 và thay đổi giá trị của i thành giá trị mà ta mong muốn
- (chú ý: 0x007ffc5902ab20 là giá trị trên stack tại %28 đang trỏ tới một giá tị stack khác và còn 0x007ffc5902ab20 tương ứng với %55 lúc sau là địa chỉ thât trên stack đang chứa địa chỉ của rsp+8 đẫ được ta chỉnh sửa )
+ Vậy ta sẽ sử dụng địa chỉ 0x007ffc5902ab20 với %28 để có thể ghi đè giá trị mà nó tỏ tới thành giá trị của rsp+8 và ta sẽ sử dụng chính địa chỉ 0x007ffc5902abf8 với %55 lúc đó dang chứa địa chỉ rsp+8 và thay đổi giá trị của i thành giá trị mà ta mong muốn
+ (chú ý: 0x007ffc5902ab20 là giá trị trên stack tại %28 đang trỏ tới một giá tị stack khác và còn 0x007ffc5902abf8 tương ứng với %55 lúc sau là địa chỉ thât trên stack đang chứa địa chỉ của rsp+8 đẫ được ta chỉnh sửa )
  các bạn cũng có thể sử dụng 0x007ffc5902ab08 vơi %25 tương ứng nhưng khi tạo ROPchain hãy dùng %28 đề còn có chỗ mà tạo ROPchain 
  
  ```python
