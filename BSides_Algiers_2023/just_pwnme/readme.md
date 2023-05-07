@@ -1,4 +1,4 @@
-# heap challge
+# heap challenge
 # TCACHE POINSON
 
 \\\srcipt,chall,libc và linker đều ở trong file src.
