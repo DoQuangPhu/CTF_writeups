@@ -52,7 +52,9 @@ cái giá biến var_50 sẽ mang giá trị là -0x50
 Hiểu được luồng thực thi của chương trình thì ta sẽ có hướng khai thác như sau :
 # PLAN
 Step1: ta sẽ ghi đè biến global message với địa chỉ GOT của hàm nào đó để khi chương trình puts message ta sẽ leak được địa chỉ libc
+
 Step2: ghi đè message với địa chỉ của chuỗi /bin/sh đã khi đã leak được libc
+
 Step3: over write GOT của PUTS thành System
 
 full script in p.py
