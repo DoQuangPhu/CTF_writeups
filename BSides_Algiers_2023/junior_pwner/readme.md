@@ -27,8 +27,8 @@ Ta thấy sau khi gọi hàm vuln nó sẽ thực hiện đoạn code sau :
 ; RAX: 0x12345678 -> "AAAAAA..."
 mov     rcx, [rax]        ;  nó sẽ lưu 8byte đầu vô rcx=> rcx="AAAAAAAA"
 mov     rbx, [rax+8]      ; rbx="AAAAAAAA" 8 byte tiếp theo
-mov     [rbp+var_50], rcx ; nó sẽ lưu RBP +offset var_0x50
-mov     [rbp+var_48], rbx; nó sẽ lưu RBP +offset var_0x50
+mov     [rbp+var_50], rcx ; nó sẽ lưu RBP +offset var_50
+mov     [rbp+var_48], rbx; nó sẽ lưu RBP +offset var_48
 mov     rcx, [rax+10h] 
 mov     rbx, [rax+18h]
 mov     [rbp+var_40], rcx
