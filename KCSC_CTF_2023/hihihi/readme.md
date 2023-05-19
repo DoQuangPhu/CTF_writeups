@@ -130,7 +130,7 @@ ta biết chữ đầu tiên trong flag sẽ là "K" dưới dạng bin thì s�
 vậy để kiểm tra xem chương trình có rơi vào INFI_LOOP không thì ta chỉ cần :
 ```python
 start=time.time()# thời gian ngay sau khi ta send payload lần 2
-p.recvall(timeout=1).decode()# nếu chương trình rơi vào vong INFI loop thì sẽ có  1 giay khác bieejt giữa giá trị của now và start. còn nếu chương trình nhảy vô end thì nó sẽ thoát luôn
+p.recvall(timeout=1).decode()# nếu chương trình rơi vào vong INFI loop thì sẽ có  1 giay khác bieejt giữa giá trị của now và start.
 now=time.time()
 ```
 
