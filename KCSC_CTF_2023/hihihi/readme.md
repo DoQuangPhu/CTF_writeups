@@ -106,7 +106,7 @@ OK vậy là xong bước 2 . debug trên local thì ta sẽ thấy chương tr�
 Bước còn lại là lấy flag ra . Ta sẽ sử dụng timing attack , ta sẽ cho chương trình đọc từng byte của flag vô thanh ghi bl sau đó đối chiếu với từng ký tự asccii có thể in ra .
 nhưng cách này thì rât lâu bơi ta sẽ phải đối chiếu với rất tất cả các ký tự asccii trong string.printable.Và lúc thi thì mình làm cách này =))
 
-Nhưng sau khi xem solution thì mình sẽ đôi chiếu từng từng bit , dùng cách này thì ta sẽ chỉ cần 8 lần brute thì ta đã có thể lấy được 1 chữ .
+Nhưng sau khi xem solution thì mình sẽ dùng cách khác đó là đối chiếu từng từng bit , dùng cách này thì ta sẽ chỉ cần 8 lần brute ta đã có thể lấy được 1 chữ .
 
 mình sẽ lấy VD để dễ giải thích hơn :
 
@@ -122,7 +122,7 @@ ta biết chữ đầu tiên trong flag sẽ là "K" dưới dạng bin thì s�
         shr bl,7               ; 1000 0000 >> 7= 0000 0001
         INFI_LOOP:
             cmp bl,0           ; nếu bit đó là 1 thì ta sẽ cho chương trình chạy vô hạn 
-            je end             ; không thi thoát
+            je end             ; 0 thi thoát
             jmp INFI_LOOP
         end:
 ```
