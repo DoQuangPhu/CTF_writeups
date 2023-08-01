@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+#dpkg-deb -x lib64gcc1-x32-cross_8.4.0-1ubuntu1~18.04cross1_all.deb lib1
+#dpkg-deb -x lib64stdc++6-x32-cross_8.2.0-1ubuntu2~18.04cross1_all.deb lib2
 from pwn import *
 
 exe = ELF("./caov_patched",checksec=False)
