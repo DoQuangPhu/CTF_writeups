@@ -1,0 +1,5 @@
+lib64stdc++6-x32-cross binary: arch-independent-package-contains-binary-or-object
+lib64stdc++6-x32-cross binary: non-standard-dir-in-usr
+lib64stdc++6-x32-cross binary: shlibs-declares-dependency-on-other-package
+lib64stdc++6-x32-cross binary: postinst-has-useless-call-to-ldconfig
+lib64stdc++6-x32-cross binary: postrm-has-useless-call-to-ldconfig
