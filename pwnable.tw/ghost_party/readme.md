@@ -151,7 +151,7 @@ class Devil : public Ghost{
 };
 ```
 
-The source code have many `subclass` that inherit from super class `Ghost` but i will just focus diffrence between `Vampire` and `Devil` . But before that let take a look at the slide of Angelboy.
+The source code have many `subclass` that inherit from super class `Ghost` but i will just focus on the difference between `Vampire` and `Devil` . But before that let take a look at the slide of Angelboy.
 
 ![image](https://github.com/DoQuangPhu/CTF_writeups/assets/93699926/75604af7-699a-4b79-972c-4ed737fa3a14)
 
