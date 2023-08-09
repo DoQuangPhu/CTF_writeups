@@ -172,10 +172,11 @@ So let moving on to the next part.
 as if you have not know that , in OOP objects have contructor and destructor function and they work exactly like their name . 
 And in the code above we can spot a vulnerbility here or an error in this case cause it make the program crash . Thing we talking about here is that `Stu` is lack of `Copy CONSTRUCTOR`
 In this case `Stu.id` can work perfectly fine cause it a prime data type . but `Stu.name` is in contrast is a pointer . so if you copy the data this way the object getting `push_back` into 
-`Vector` stulist will have the same address of the Object student.name - a address located on heap. and when we hit the the return point `destructor` funtion will be call automatically , the object student get copy in stulist vector. Now we we have 2 object , the first one is student and the other one is studen copied into ghostlist.
+`Vector` stulist will have the same address of the Object student.name - a address located on heap.when the object student get copy in stulist vector. Now we we have 2 object , the first one is student and the other one is studen copied into ghostlist.
 and this two object.name is the same address. This type of copy is called as shallow copy and we should have counter this problem by `deep_copy` - make a propper copy constructor.
 if you still confuse between shallow copy and deep copy then i reccommend this video : https://youtu.be/tbtFKuTcZKs
 it just one of a tons of video about this problem . you can watch the others video as you like.
+and when we hit the the return point `destructor` funtion will be call automatically.
 
 Now look at `Devil` and `Vampire` we can clearly see that `Vampire` is lack of copy contructor. Now let analyze another function `smallist` which called when ever we create a `Ghost` :
 
