@@ -155,7 +155,7 @@ The source code have many `subclass` that inherit from super class `Ghost` but i
 
 ![image](https://github.com/DoQuangPhu/CTF_writeups/assets/93699926/75604af7-699a-4b79-972c-4ed737fa3a14)
 
-In OOP programming every object will has it's own virtual function table . this table is the address of exe which have `read` permisson only. And we can find this address of it at the very begining of every object.
+In OOP programming every object will has it's own virtual function table . this table is the address of exe which have `read` permisson only. And we can find this address at the very begining of every object.
 
 ![image](https://github.com/DoQuangPhu/CTF_writeups/assets/93699926/82e16ee2-10fe-48e0-8b25-186974337bb2)
 
