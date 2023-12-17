@@ -60,5 +60,5 @@ unsigned long n_sort_number;
 `n_sort_number` is 8byte but the function only check if lower 4 byte of it was smaller than MAXSORTSIZE, so if the higher 4 bytes of n_sort_number was have some junk value we should be able to trigger the overflow bug.
 And we can do that via menu cause it let us scanf in the variable have size of 8byte . You may wonder if we input a choice bigger than the `cases` in main we should be jump in `default` right? but look at `int choice` it only have 4 byte in  
 so if in input you input somthing like `0x100000005` choice will be just 5 and we will be able to call `simple_sort`, and just another trick to leak the exe address , if you input something like `+-*/` on scanf , the value at the address get scanf in wont be change.
-So after you trigger the bug overflow and do scanf all the way to the robot struct just need to input `+` not change the value of the struct robot to leak the exe address and trigger the bug second time . This time you have the address if `cat_flag`,
+So after you trigger the bug overflow and do scanf all the way to the robot struct just need to input `+` not change the value of the struct robot to leak the exe address and trigger the bug second time . This time you have the address of `cat_flag`,
 just write it all over the robot and jump any cases in main . That it !!!!!
