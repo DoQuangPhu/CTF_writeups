@@ -645,6 +645,10 @@ Take a look in IDA we can easyly get the offset of `PCINoteDevState.mmio` and `P
 
  so after leak heap addres and calculate the `PCINoteDevState` address we can add that address with 0xa80 should be address of `PCINoteDevState.mmio.ops` overwrite this pointer so it point to our contolled buffer which contain the system address . And we can see that the read and wite funtion of `ops` was taking `opaque`  as the first argument . By debugging we can know this address was the address of `PCINoteDevState` so just make another abitary read to the address of `PCINoteDevState` and inject our command into it . We are unable to get a shell by calling system("/bin/sh\x00"); the system will be just hang there forever , but we could do some thing like inject command and make a easy reverse shell but by checking the docker file we are unable to do so cause the docker have no command such `nc` or `socat`. So in this case we can just cat the flag . The exploit script was originaly from other player . 
 
+challenge and dockerfile :
+
+ https://drive.google.com/drive/folders/1CyojrTtEXydTKvF-vePM22316fZzdJ6Q?usp=sharing
+
 
 
 
