@@ -631,9 +631,19 @@ uint64_t virt2phys(void* p) {
 }
 ```
 
-# TOBE CONTTINUE
+`cpu_physical_memory_rw` is a function which can read or write directly into physical address , arguments in this order `cpu_physical_memory_rw(hwaddr addr, uint8_t *buf,int len, int is_write)` . Where addr is physical address buffer and buf can be virtual address which can be read from or write to.
 
+# EXPLOIT 
+ 
+Inorder to leak leak libc address we can use the register field as a fake note and overwrite the note head pointer to our fake chunk and then replcace the fake_note.content with a `qemu_system_x86_64` GOT address to leak the address of libc , and then we can create a another fake_note so we can write into `PCINoteDevState.mmio.ops`
 
+Take a look in IDA we can easyly get the offset of `PCINoteDevState.mmio` and `PCINoteDevState.mmio.ops` 
+
+![image](https://github.com/DoQuangPhu/CTF_writeups/assets/93699926/9c9ab430-d67d-41aa-9315-05ac59cfba45)
+
+![image](https://github.com/DoQuangPhu/CTF_writeups/assets/93699926/6446e0af-0100-40d8-871f-3a6efbe012c9)
+
+ so after leak heap addres and calculate the `PCINoteDevState` address we can add that address with 0xa80 should be address of `PCINoteDevState.mmio.ops` overwrite this pointer so it point to our contolled buffer which contain the system address . And we can see that the read and wite funtion of `ops` was taking `opaque`  as the first argument . By debugging we can know this address was the address of `PCINoteDevState` so just make another abitary read to the address of `PCINoteDevState` and inject our command into it . We are unable to get a shell by calling system("/bin/sh\x00"); the system will be just hang there forever , but we could do some thing like inject command and make a easy reverse shell but by checking the docker file we are unable to do so cause the docker have no command such `nc` or `socat`. So in this case we can just cat the flag . The exploit script was originaly from other player . 
 
 
 
